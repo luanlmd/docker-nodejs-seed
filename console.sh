@@ -6,11 +6,6 @@ function create-react-app
     docker run --user $(id -u):$(id -g) -it --rm -v $(pwd)/app:/app node:12-slim npx create-react-app /app --typescript
 }
 
-function bash
-{
-    docker-compose run app yarn "$@"
-}
-
 function yarn
 {
     docker-compose run app yarn "$@"
