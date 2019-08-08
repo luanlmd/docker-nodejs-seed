@@ -18,12 +18,17 @@ function yarn
 
 function build
 {
-    docker build -t docker-nodejs-seed -f prod.Dockerfile .
+    docker build -t docker-react-seed -f docker/prod.Dockerfile .
+}
+
+function extract
+{
+    docker cp $(docker create docker-react-seed):/usr/share/nginx/html build
 }
 
 function run
 {
-    docker run -p 80:80 docker-nodejs-seed
+    docker run -p -rm 8000:80 docker-react-seed
 }
 
 "$@"
