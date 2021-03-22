@@ -3,7 +3,7 @@
 function create-react-app
 {
     mkdir app
-    docker run --user $(id -u):$(id -g) -it --rm -v $(pwd)/app:/app node:12-slim npx create-react-app /app --typescript
+    docker run --user $(id -u):$(id -g) -it --rm -v $(pwd)/app:/app node:14-slim npx create-react-app /app --template typescript
 }
 
 function yarn
